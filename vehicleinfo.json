@@ -1,0 +1,22 @@
+﻿ [
+        {
+            "model": "penalty.vehicleinfo",
+            "pk": 1,
+            "fields":{
+            "registration_number": "AP10BA1897",
+            "owner": "priya",
+            "Make": "Ford",
+            "colour": "white",
+            "purchage_date": "2016-04-26T14:36:08Z"}
+        },
+     {
+         "model": "penalty.vehicleinfo",
+         "pk": 2,
+         "fields": {
+             "registration_number": "AP10BA1898",
+             "owner": "Tanya",
+             "Make": "Hyundai",
+             "colour": "black",
+             "purchage_date": "2016-04-26T14:36:08Z"
+         }
+     }]

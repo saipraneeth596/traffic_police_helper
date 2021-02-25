@@ -1,0 +1,49 @@
+{% extends 'enroll/base.html'%}
+{% block content %}
+<div class="row" align="center">
+    <div class="col-sm-12" >
+        <H6 class="text-center alert alert-info" >Show Penalty Info at traffic signal 2</H6>
+        {% if v1 %}
+     <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">vehicle number</th>
+      <th scope="col">fine amount</th>
+      <th scope="col">violation done</th>
+      <th scope="col">violation date</th>
+        <th scope="col">make</th>
+        <th scope="col">colour</th>
+        <th scope="col">owner</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for var in v2 %}
+  {%for v in v1%}
+
+  {% if var.registration_number == v.vehicle_number%}
+  {% if v.vehicle_number in vehicle_list2 %}
+
+
+    <tr>
+      <th scope="row">{{v.vehicle_number}}</th>
+      <td>{{v.fine_amt}}</td>
+      <td>{{v.violation_done}}</td>
+      <td>{{v.violation_date}}</td>
+        <td>{{var.make}}</td>
+        <td>{{var.colour}}</td>
+        <td>{{var.owner}}</td>
+    </tr>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+
+{% endfor %}
+  </tbody>
+</table>
+        {% else %}
+        <H6 class="text-center alert alert-warning">No data found</H6>
+        {% endif %}
+    </div>
+
+    </div>
+{% endblock content %}

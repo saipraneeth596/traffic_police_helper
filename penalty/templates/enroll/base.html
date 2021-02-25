@@ -1,0 +1,24 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vehicle Penalty</title>
+  <meta name="description" content="Traffic Police Alert System">
+  <meta name="author" content="Sai Praneeth">
+
+  <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+
+</head>
+
+<body>
+<div class ="container mt-5">
+    <h2 class="text-center alert alert-danger">Traffic Police Alert System</h2>
+    {% block content %} {% endblock content%}
+</div>>
+<script src="{% static 'enroll/js/jquery.js' %"></script>
+<script src="{% static 'enroll/js/popper.js' %"></script>
+<script src="{% static 'enroll/js/bootstrap.js' %"></script>
+</body>
+</html>

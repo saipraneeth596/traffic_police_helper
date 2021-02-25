@@ -1,0 +1,59 @@
+{% extends 'enroll/base.html'%}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <H6 class="text-center alert alert-info">Show Penalty Info</H6>
+        {% if vio %}
+     <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">vehicle number</th>
+      <th scope="col">fine amount</th>
+      <th scope="col">violation done</th>
+      <th scope="col">violation date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for v in vio%}
+    <tr>
+      <th scope="row">{{v.vehicle_number}}</th>
+      <td>{{v.fine_amt}}</td>
+      <td>{{v.violation_done}}</td>
+      <td>{{v.violation_date}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+        {% else %}
+        <H4 class="text-center alert alert-warning">no data available</H4>
+        {% endif %}
+    </div>
+
+    <div class="col-sm-6">
+        <H6 class="text-center alert alert-info">Search a vehicle number</H6>
+        <form action="/search" method="GET" align="center">
+            {% csrf_token %}
+            <input type="textbox" class= "" name="search" id="search">
+            <input type="submit" class="btn btn-success" value="Search" >
+        </form>
+        <br>
+        <br>
+        <H6 class="text-center alert alert-info">Select a traffic signal area</H6>
+        <form action="/signalwise" method="GET" align="center">
+            {% csrf_token %}
+          <label for="signal">Choose a traffic signal : </label>
+
+            <select name="signal" class="btn btn-success" id="signal">
+              <option value="Signal 1">Signal 1</option>
+              <option value="Signal 2">Signal 2</option>
+              <option value="Signal 3">Signal 3</option>
+            </select>
+            <input type="submit" class="btn btn-success" value="Proceed" >
+        </form>
+    </div>
+</div>
+    </div>
+
+
+
+{% endblock content %}
